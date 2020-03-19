@@ -1,6 +1,7 @@
 package com.example.helloword;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -11,6 +12,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -20,71 +22,63 @@ import android.widget.Toast;
  */
 public class MainActivity extends AppCompatActivity {
 
-    private Button btn1,btn2;
-    private EditText et1,et2;
-    private RadioGroup rg;
-    private CheckBox cb;
+    private ImageView iv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btn1=findViewById(R.id.btn1);
+        iv=findViewById(R.id.iv);
+        Button btn1 = findViewById(R.id.btn1);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this,"Hello World!",Toast.LENGTH_SHORT).show();
+                iv.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.photo2, null));
                 Log.d("Sign In:","SUCCESS");
             }
         });
 
-        btn2=findViewById(R.id.btn2);
+        Button btn2 = findViewById(R.id.btn2);
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this,"注册成功！",Toast.LENGTH_SHORT).show();
+                iv.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.photo, null));
                 Log.d("Sign Up:","SUCCESS");
             }
         });
 
-        et1=findViewById(R.id.et_1);
+        EditText et1 = findViewById(R.id.et_1);
         et1.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                Log.d("username editText:",s.toString());
+                Log.d("Username:",s.toString());
             }
 
             @Override
-            public void afterTextChanged(Editable s) {
-                Log.d("username:",s.toString());
-            }
+            public void afterTextChanged(Editable s) { }
         });
 
-        et2=findViewById(R.id.et_2);
+        EditText et2 = findViewById(R.id.et_2);
         et2.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                Log.d("password editText:",s.toString());
+                Log.d("Password:",s.toString());
             }
 
             @Override
-            public void afterTextChanged(Editable s) {
-                Log.d("password:",s.toString());
-            }
+            public void afterTextChanged(Editable s) { }
         });
 
-        rg=findViewById(R.id.rg_1);
+        RadioGroup rg = findViewById(R.id.rg_1);
         rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -94,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        cb=findViewById(R.id.cb_1);
+        CheckBox cb = findViewById(R.id.cb_1);
         cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {

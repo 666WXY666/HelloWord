@@ -4,35 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <LinearLayout
-        android:layout_width="80dp"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:background="#4CAF50">
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="260dp"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="#92ADB1">
+    tools:context=".MainActivity"
+    android:background="@drawable/bg"
+    android:orientation="vertical">
 
         <LinearLayout
-            android:id="@+id/ll_1"
-            android:layout_width="260dp"
-            android:layout_height="260dp"
-            android:orientation="vertical"
-            android:background="#2196F3"
-            android:padding="30dp">
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:gravity="center"
+            android:layout_marginTop="50dp">
 
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#FF9800"
-                app:srcCompat="@mipmap/photo"
+                android:id="@+id/iv"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                app:srcCompat="@drawable/photo"
                 android:contentDescription="@string/photo">
 
             </ImageView>
@@ -41,16 +27,18 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginBottom="10dp">
+            android:layout_height="120dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="20dp">
 
             <TextView
                 android:id="@+id/tv_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/user"
-                android:textSize="22sp"
-                android:layout_margin="10dp">
+                android:textSize="25sp"
+                android:layout_margin="10dp"
+                android:textColor="#FFFFFF">
 
             </TextView>
 
@@ -59,8 +47,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/tv_1"
-            android:textSize="22sp"
+            android:textSize="25sp"
             android:hint="@string/userHint"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
             android:layout_toEndOf="@+id/tv_1"
             android:autofillHints="@string/user"
             android:inputType="text"
@@ -77,9 +67,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/password"
-                android:textSize="22sp"
+                android:textSize="25sp"
                 android:layout_margin="10dp"
-                android:layout_below="@+id/tv_1">
+                android:layout_below="@+id/tv_1"
+                android:textColor="#FFFFFF">
 
             </TextView>
 
@@ -89,9 +80,11 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/tv_1"
                 android:layout_below="@id/et_1"
-                android:textSize="22sp"
+                android:textSize="25sp"
                 android:hint="@string/passwordHint"
                 android:autofillHints="@string/user"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"
                 android:inputType="textPassword"
                 android:layout_toEndOf="@+id/tv_1"
                 android:layout_marginRight="10dp"
@@ -110,8 +103,10 @@
             android:layout_height="wrap_content"
             android:text="@string/remember"
             android:textSize="25sp"
-            android:textColor="#6200EA"
-            android:layout_marginBottom="10dp">
+            android:textColor="#00B8D4"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp">
 
         </CheckBox>
 
@@ -119,7 +114,8 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp">
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp">
 
             <Button
                 android:id="@+id/btn1"
@@ -129,7 +125,9 @@
                 android:textColor="#FFFFFF"
                 android:textSize="25sp"
                 android:gravity="center"
-                android:background="#2196F3">
+                android:background="#2196F3"
+                android:layout_marginLeft="50dp"
+                android:layout_marginStart="50dp">
 
             </Button>
 
@@ -143,7 +141,9 @@
                 android:gravity="center"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:background="#009688">
+                android:background="#009688"
+                android:layout_marginRight="50dp"
+                android:layout_marginEnd="50dp">
 
             </Button>
 
@@ -155,6 +155,7 @@
             android:layout_height="70dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
             android:orientation="vertical">
 
             <RadioButton
@@ -164,7 +165,7 @@
                 android:text="@string/commonUser"
                 android:checked="true"
                 android:textSize="25sp"
-                android:textColor="#FFD600">
+                android:textColor="#304FFE">
 
             </RadioButton>
 
@@ -179,15 +180,5 @@
             </RadioButton>
 
         </RadioGroup>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="80dp"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:background="#4CAF50">
-
-    </LinearLayout>
 
 </LinearLayout>
